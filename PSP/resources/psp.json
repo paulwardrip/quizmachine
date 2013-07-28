@@ -1,0 +1,22 @@
+{
+	"title" : "The Personality Self-Portrait",
+	
+	"questions": "33",
+	
+	"categories": [
+		{ "short": "A", "long": "Vigilant", "qs": [ "1", "2", "3", "4" ] },
+		{ "short": "B", "long": "Solitary", "qs": [  ]},
+		{ "short": "C", "long": "Idiosyncratic", "qs": [ "12", "16"] },
+		{ "short": "D", "long": "Adventurous", "qs": [ "19" ]},
+		{ "short": "E", "long": "Mercurial", "qs": [ "-8", "9" ]},
+		{ "short": "F", "long": "Dramatic", "qs": [ "15" ]},
+		{ "short": "G", "long": "Self-Confident", "qs": [ "10", "13", "14", "17", "18", "20", "24" ]},
+		{ "short": "H", "long": "Sensitive", "qs": [  ]},
+		{ "short": "I", "long": "Devoted", "qs": [ "22" ]},
+		{ "short": "J", "long": "Conscientious", "qs": [ "21", "23" ]},
+		{ "short": "K", "long": "Leisurely", "qs": [ "5", "30", "32" ]},
+		{ "short": "L", "long": "Aggressive", "qs": [ "11", "31" ]},
+		{ "short": "M", "long": "Self-Sacrificing", "qs": [ "6", "7", "29", "33" ]},
+		{ "short": "N", "long": "Serious", "qs": [ "25", "26", "27", "28" ]}
+	]
+}
