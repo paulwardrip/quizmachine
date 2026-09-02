@@ -1,0 +1,21 @@
+{
+  "name": "quizmachine",
+  "version": "1.0.0",
+  "description": "a javascript engine for creating quizes",
+  "main": "quizmachine.js",
+  "scripts": {
+    "express": "node express.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulwardrip/quizmachine.git"
+  },
+  "author": "Paul Wardrip <pwardrip@gmail.com>",
+  "license": "ISC",
+  "homepage": "https://github.com/paulwardrip/quizmachine",
+  "devDependencies": {
+    "express": "^4.16.3",
+    "express-static": "^1.2.5"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Vigilant",
+    "value": 21,
+    "score": 3
+  },
+  {
+    "name": "Solitary",
+    "value": 43,
+    "score": 6
+  },
+  {
+    "name": "Idiosyncratic",
+    "value": 72,
+    "score": 13
+  },
+  {
+    "name": "Adventurous",
+    "value": 56,
+    "score": 9
+  },
+  {
+    "name": "Mercurial",
+    "value": 67,
+    "score": 12
+  },
+  {
+    "name": "Dramatic",
+    "value": 63,
+    "score": 10
+  },
+  {
+    "name": "Self-Confident",
+    "value": 6,
+    "score": 1
+  },
+  {
+    "name": "Sensitive",
+    "value": 79,
+    "score": 11
+  },
+  {
+    "name": "Devoted",
+    "value": 63,
+    "score": 10
+  },
+  {
+    "name": "Conscientious",
+    "value": 25,
+    "score": 4
+  },
+  {
+    "name": "Leisurely",
+    "value": 93,
+    "score": 13
+  },
+  {
+    "name": "Aggressive",
+    "value": 6,
+    "score": 1
+  },
+  {
+    "name": "Self-Sacrificing",
+    "value": 75,
+    "score": 12
+  },
+  {
+    "name": "Serious",
+    "value": 86,
+    "score": 12
+  }
+]
