@@ -179,9 +179,22 @@ var QuizMachine = function (target, url) {
         "  #results { overflow-y: auto; -webkit-overflow-scrolling: touch; }",
         "}"
     ].join("\n");
-    $("<style>").text(mobileCss).appendTo("head");
+
+    var globalCss = [
+        ".quiz .answer .emoji { margin-right: 4px; }",
+        ".quiz .answered .answer .emoji { filter: grayscale(1); opacity: 0.5; }",
+        ".quiz .answered .answer.picked .emoji { filter: none; opacity: 1; }"
+    ].join("\n");
+
+    $("<style>").text(mobileCss + "\n" + globalCss).appendTo("head");
 
     var storageKey = "quizmachine:answers:" + url;
+
+    var answerEmoji = {
+        "yes": "👍",
+        "maybe": "🤷",
+        "no": "👎"
+    };
 
     var qhtml = '<div class="unanswered">' +
         '<div class="answerbox"></div>' +
@@ -460,7 +473,10 @@ var QuizMachine = function (target, url) {
                 qbtns[idx] = {};
 
                 for (var qi in ad) {
-                    var $ae = $('<div class="answer cat-' + sn + '">' + qi + '</div>');
+                    var $ae = $('<div class="answer cat-' + sn + '"></div>');
+                    var em = answerEmoji[String(qi).toLowerCase()];
+                    if (em) $ae.append('<span class="emoji">' + em + '</span>');
+                    $ae.append($('<span class="atext"></span>').text(qi));
                     $ae.data("value", {
                         points: ad[qi],
                         qid: idx,
