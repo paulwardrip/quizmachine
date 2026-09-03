@@ -1,0 +1,20 @@
+{
+  "name": "jsonstyle",
+  "description": "allows you to css in your scripts as js objects",
+  "main": "jsonstyle.js",
+  "authors": [
+    "Paul Wardrip <pwardrip@gmail.com>"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "css",
+    "json",
+    "embed",
+    "styles"
+  ],
+  "ignore": [
+    "test",
+    "package-lock.json",
+    "src/**"
+  ]
+}

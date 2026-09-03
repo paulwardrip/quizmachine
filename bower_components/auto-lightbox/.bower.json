@@ -1,0 +1,36 @@
+{
+  "name": "auto-lightbox",
+  "main": "auto-lightbox.js",
+  "homepage": "https://github.com/paulwardrip/auto-lightbox",
+  "authors": [
+    "Paul Wardrip <pwardrip@gmail.com>"
+  ],
+  "description": "an automatic lightbox that checks an element's visibility and modal creation.",
+  "moduleType": [],
+  "keywords": [
+    "lightbox",
+    "modal"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "_config.yml",
+    "node_modules",
+    "bower_components",
+    "scripts",
+    "index.html"
+  ],
+  "dependencies": {
+    "jsonstyle": "^1.1.1"
+  },
+  "version": "2.0.1-beta-3",
+  "_release": "2.0.1-beta-3",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.0.1-beta-3",
+    "commit": "e9de60e086ec879f0d70ad96c9cce004790761b1"
+  },
+  "_source": "https://github.com/paulwardrip/auto-lightbox.git",
+  "_target": "^2.0.0",
+  "_originalSource": "auto-lightbox"
+}

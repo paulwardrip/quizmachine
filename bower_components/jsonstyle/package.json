@@ -1,0 +1,21 @@
+{
+  "name": "jsonstyle",
+  "version": "1.1.4",
+  "description": "allows you to css in your scripts as js objects",
+  "main": "index.js",
+  "scripts": {
+    "dist": "copyfiles -f src/jsonstyle.js dist && uglifyjs dist/jsonstyle.js -o dist/jsonstyle.min.js"
+  },
+  "keywords": [
+    "css",
+    "json",
+    "embed",
+    "styles"
+  ],
+  "author": "Paul Wardrip <pwardrip@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "copyfiles": "^2.0.0",
+    "uglify-js": "^3.4.7"
+  }
+}
