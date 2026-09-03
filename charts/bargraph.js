@@ -1,10 +1,12 @@
 var bargraph = function (selector, data) {
 
+    var mobile = window.innerWidth <= 600;
+
     var margin = {
         top: 10,
-        right: 50,
+        right: mobile ? 34 : 50,
         bottom: 30,
-        left: 150
+        left: mobile ? 95 : 150
     };
 
     var par = d3.select(selector);
@@ -20,6 +22,11 @@ var bargraph = function (selector, data) {
 
     var width = Math.max(box.width - margin.left - margin.right, 100),
         height = Math.max(box.height - margin.top - margin.bottom, 100);
+
+    // on small screens guarantee readable height per bar; the container scrolls
+    if (mobile) {
+        height = Math.max(height, data.length * 32);
+    }
 
     var y = d3.scaleBand()
         .range([0, height])
@@ -71,4 +78,8 @@ var bargraph = function (selector, data) {
 
     svg.append("g")
         .call(d3.axisLeft(y));
+
+    if (mobile) {
+        svg.selectAll(".tick text").attr("font-size", "10px");
+    }
 };

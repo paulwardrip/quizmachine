@@ -159,6 +159,28 @@ var QuizMachine = function (target, url) {
 
     JsonStyle.googlefont(fonts.question);
 
+    var mobileCss = [
+        "@media (max-width: 600px) {",
+        "  .quiz > div { display: flex; flex-wrap: wrap; align-items: baseline; margin-bottom: 18px; }",
+        "  .quiz .number { order: 1; width: auto; padding-right: 6px; }",
+        "  .quiz .questiontext { order: 2; flex: 1; width: auto !important; padding: 0; }",
+        "  .quiz .answerbox { order: 3; width: 100%; display: flex; margin-top: 8px; }",
+        "  .quiz .answer { flex: 1; width: auto !important; padding: 10px 6px; margin: 0 3px; }",
+        "  .quiz .answer:first-child { margin-left: 0; }",
+        "  .quiz .answer:last-child { margin-right: 0; }",
+        "  .qm-progress { display: flex; flex-wrap: wrap; align-items: center; padding: 8px 10px; }",
+        "  .qm-progress .qm-progresstext { margin-right: 10px; }",
+        "  .qm-progress .qm-finish { padding: 10px 16px; }",
+        "  .qm-progress .qm-tools { float: none; margin-left: auto; line-height: normal; }",
+        "  .qm-progress .qm-load { margin-right: 10px; }",
+        "  #graphical { padding: 0 8px; }",
+        "  #resultactions input { width: 100px; }",
+        "  #resultactions button { padding: 10px 12px; margin-bottom: 6px; }",
+        "  #results { overflow-y: auto; -webkit-overflow-scrolling: touch; }",
+        "}"
+    ].join("\n");
+    $("<style>").text(mobileCss).appendTo("head");
+
     var storageKey = "quizmachine:answers:" + url;
 
     var qhtml = '<div class="unanswered">' +
@@ -189,6 +211,12 @@ var QuizMachine = function (target, url) {
     var scoreData;
 
     function sizeAnswers() {
+        if (window.innerWidth <= 600) {
+            $(".quiz .answer").css({ width: "" });
+            $(".quiz .questiontext").css({ width: "" });
+            return;
+        }
+
         var fra = $(".answer", $(".answerbox", $quiz)[0]);
         var maxw = $(fra[0]).width();
 
@@ -338,8 +366,10 @@ var QuizMachine = function (target, url) {
         var used = ($("h3", $g).outerHeight(true) || 0) +
             ($("#resultactions").outerHeight(true) || 0);
 
+        var mobile = window.innerWidth <= 600;
+
         $el.css({
-            width: Math.round($w.width() * 0.92) + "px",
+            width: Math.round($w.width() * (mobile ? 0.96 : 0.92)) + "px",
             height: Math.max(Math.round($w.height() - used - 60), 300) + "px"
         });
 
@@ -394,6 +424,7 @@ var QuizMachine = function (target, url) {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(function () {
             if ($("#graphical").is(":visible")) window.graphslix();
+            else sizeAnswers();
         }, 150);
     });
 
