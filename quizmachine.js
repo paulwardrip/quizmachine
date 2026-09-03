@@ -40,6 +40,8 @@ var QuizMachine = function (target, url) {
             ".answer": {
                 display: "inline-block",
                 "text-align": "center",
+                "white-space": "nowrap",
+                "vertical-align": "middle",
                 background: "black",
                 margin: "1px 1px",
                 padding: "3px 5px",
@@ -50,7 +52,7 @@ var QuizMachine = function (target, url) {
 
             ".unanswered": {
                 ".answer": {
-                    "background": "white"
+                    "background": "#f0f0f0"
                 },
 
                 ".answer:hover": {
@@ -237,7 +239,7 @@ var QuizMachine = function (target, url) {
             if ($(fra[fai]).width() > maxw) maxw = $(fra[fai]).width();
         }
 
-        $(".quiz .answer").css({ width: Math.round(maxw) + "px" });
+        $(".quiz .answer").css({ width: Math.ceil(maxw) + 2 + "px" });
 
         setTimeout(function () {
             var qwi = ($(".quiz .unanswered").innerWidth() - $(".quiz .answerbox").outerWidth() -
